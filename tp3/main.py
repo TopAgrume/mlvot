@@ -45,7 +45,7 @@ def main():
 
         out.write(frame)
 
-        cv2.imshow('Tracking with Kalman', frame)
+        cv2.imshow('TP3 Tracking with Kalman', frame)
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
 

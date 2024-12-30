@@ -31,7 +31,7 @@ class KalmanIOUTracker:
             y_sdt_meas=0.1
         )
 
-    def calculate_iou(self, box1, box2):
+    def compute_iou(self, box1, box2):
         x_1, y_1, w_1, h_1 = box1
         x_2, y_2, w_2, h_2 = box2
 
@@ -57,7 +57,7 @@ class KalmanIOUTracker:
             predicted_bbox = self.centroid_to_bbox(track.kf.x[:2], track.bbox[2], track.bbox[3])
 
             for j, detection in enumerate(detections):
-                similarity_matrix[i, j] = self.calculate_iou(predicted_bbox, detection[2:6])
+                similarity_matrix[i, j] = self.compute_iou(predicted_bbox, detection[2:6])
 
         return similarity_matrix
 
