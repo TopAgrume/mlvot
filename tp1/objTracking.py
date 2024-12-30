@@ -1,7 +1,6 @@
 from Detector import detect
 from KalmanFilter import KalmanFilter
 import cv2
-import numpy as np
 
 kalman_filter = KalmanFilter(dt=0.1, u_x=1, u_y=1, std_acc=1, x_sdt_meas=0.1, y_sdt_meas=0.1)
 
