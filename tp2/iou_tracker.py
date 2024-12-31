@@ -1,7 +1,7 @@
 import numpy as np
 from scipy.optimize import linear_sum_assignment
-from track_manager import TrackManager
-from visualizer import TrackVisualizer
+from tp2.track_manager import TrackManager
+from tp2.visualizer import TrackVisualizer
 
 class IOUTracker:
     def __init__(self, iou_threshold=0.3, max_invisible=10):

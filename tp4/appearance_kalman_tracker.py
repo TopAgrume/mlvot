@@ -1,9 +1,9 @@
 import numpy as np
 from scipy.optimize import linear_sum_assignment
 from tp1.KalmanFilter import KalmanFilter
-from track_manager import TrackManager
-from visualizer import TrackVisualizer
-from reid_feature_extractor import ReidFeatureExtractor
+from tp4.track_manager import TrackManager
+from tp4.visualizer import TrackVisualizer
+from tp4.reid_feature_extractor import ReidFeatureExtractor
 
 class AppearanceKalmanTracker:
     def __init__(self, iou_threshold=0.3, max_invisible=10,

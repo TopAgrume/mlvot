@@ -1,6 +1,6 @@
 import cv2
 from collections import defaultdict
-from iou_tracker import IOUTracker
+from tp2.iou_tracker import IOUTracker
 
 def load_detections(detection_file):
     detections = defaultdict(list)

@@ -1,6 +1,6 @@
 import cv2
 from collections import defaultdict
-from kalman_iou_tracker import KalmanIOUTracker
+from tp3.kalman_iou_tracker import KalmanIOUTracker
 
 def load_detections(detection_file):
     detections = defaultdict(list)

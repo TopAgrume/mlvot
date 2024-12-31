@@ -61,6 +61,7 @@ torch==2.5.1
 torchreid==0.2.5
 torchvision==0.20.1
 tqdm==4.67.1
+trackeval @ git+https://github.com/JonathonLuiten/TrackEval.git@12c8791b303e0a0b50f753af204249e622d0281a
 triton==3.1.0
 typing_extensions==4.12.2
 tzdata==2024.2
