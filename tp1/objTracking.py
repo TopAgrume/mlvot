@@ -8,6 +8,18 @@ video_path = "data/randomball.avi"
 cap = cv2.VideoCapture(video_path)
 trajectory = []
 
+# Video save
+frame_width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
+frame_height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
+fps = int(cap.get(cv2.CAP_PROP_FPS))
+
+out_video = cv2.VideoWriter(
+    filename='tp1/results/output_tracking.avi',
+    fourcc=cv2.VideoWriter_fourcc(*'XVID'),
+    fps=fps,
+    frameSize=(frame_width, frame_height)
+)
+
 while cap.isOpened():
     ret, frame = cap.read()
     if not ret:
@@ -52,7 +64,7 @@ while cap.isOpened():
         cv2.circle(img=frame, center=(int(centers[0][0].item()),int(centers[0][1].item())),
                    radius=10, color=(0, 255, 0), thickness=2)
 
-
+    out_video.write(frame)
     cv2.imshow('Object Tracking', frame)
 
     if cv2.waitKey(30) & 0xFF == ord('q'):
@@ -60,3 +72,4 @@ while cap.isOpened():
 
 cap.release()
 cv2.destroyAllWindows()
+out_video.release()
